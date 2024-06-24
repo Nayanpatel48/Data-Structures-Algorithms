@@ -16,7 +16,6 @@ public class HashSetImplimentation
         set.add("Hiren");//duplicates will be not allowed
 
         System.out.println(set);
-
         //Display the set elements
         for (String s : set)
             System.out.print(s.toLowerCase()+" ");

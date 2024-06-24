@@ -1,11 +1,11 @@
 package Queues;
 import java.util.*;
 
-public class DoubleEndedQueue
+public class PriorityQueue
 {
     public static void main(String[] args)
     {
-        PriorityQueue<String> priorityQueue = new PriorityQueue<>();
+        java.util.PriorityQueue<String> priorityQueue = new java.util.PriorityQueue<>();
         priorityQueue.offer("Hema");
         priorityQueue.offer("Sema");
         priorityQueue.offer("khema");
@@ -17,7 +17,7 @@ public class DoubleEndedQueue
         while (!priorityQueue.isEmpty())
             System.out.print(priorityQueue.remove()+"\t");
 
-        PriorityQueue<String> priorityQueue1 = new PriorityQueue<>(4,Collections.reverseOrder());
+        java.util.PriorityQueue<String> priorityQueue1 = new java.util.PriorityQueue<>(4,Collections.reverseOrder());
         priorityQueue1.offer("Hema");
         priorityQueue1.offer("Sema");
         priorityQueue1.offer("khema");
