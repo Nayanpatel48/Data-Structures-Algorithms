@@ -1,4 +1,5 @@
 package LinkedList
+import java.util.Scanner
 
 class Node<T>(val value: T){
     var next:Node<T>? = null
@@ -56,18 +57,24 @@ class LinkedList<T>{
 }
 fun main() {
     val linkedList = LinkedList<Int>()
+
+//creating a scanner
+    val reader = Scanner(System.`in`)
+
+    println("Enter 4 elements:")
 // adding elements to the linked list
-    linkedList.append(3)
-    linkedList.append(7)
-    linkedList.append(89)
-    linkedList.append(11)
+    linkedList.append(reader.nextInt())
+    linkedList.append(reader.nextInt())
+    linkedList.append(reader.nextInt())
+    linkedList.append(reader.nextInt())
 
 // printing the linked list
     println("Linked List:")
     linkedList.showLinkedList()
 
+    println("Enter element to be deleted:")
 // Remove element with value 89
-    linkedList.remove(89)
+    linkedList.remove(reader.nextInt())
     println("After Removing")
     linkedList.showLinkedList()
 }
