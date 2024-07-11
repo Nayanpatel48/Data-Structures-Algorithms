@@ -11,9 +11,11 @@ class LinkedList<Int>
     private var head: Node<Int>? = null
 
     // Add a new node at the beginning of the linked list
-    fun prepend(value: Int)
+    fun prepend(value: Int) : String
     {
+        //create an empty node as well as initializing it
         val newNode = Node(value)
+
         if (head == null)
             head = newNode
         else
@@ -21,17 +23,20 @@ class LinkedList<Int>
             newNode.next = head
             head = newNode
         }
-        println("$value is prepended successfully!")
+        return  "$value is prepended successfully!"
     }
 
     // Add a new node to the end of the list
     fun append(value: Int)
     {
+        //created an empty node as well as initialized it
         val newNode = Node(value)
-        if (head == null)
+
+        if (head == null)//if least is empty
             head = newNode
-        else
+        else//if least is not empty
         {
+            //initialize traversal
             var current = head
 
             while (current?.next != null)
@@ -45,9 +50,13 @@ class LinkedList<Int>
     // Insert a new node after a specific value (assuming values are unique)
     fun insertAfter(valueToInsertAfter: Int, value: Int)
     {
+        //create and initialize the new node
         val newNode = Node(value)
+
+        //initialize the traversal
         var current = head
 
+        //traverse the list until the node N not found
         while (current != null)
         {
             if (current.value == valueToInsertAfter)
@@ -64,7 +73,8 @@ class LinkedList<Int>
         }
         println("$value is inserted after $valueToInsertAfter successfully!")
     }
-    fun insertBefore(valueToInsertBefore: Int, value: Int) {
+    fun insertBefore(valueToInsertBefore: Int, value: Int)
+    {
 
     }
     // Print the elements of the linked list
@@ -156,7 +166,7 @@ fun main()
             2 -> {
                 println("Enter element:")
                 val value = newSc.nextInt()
-                linkedList1.prepend(value)
+                println(linkedList1.prepend(value))
                 continue
             }
             3 -> {
