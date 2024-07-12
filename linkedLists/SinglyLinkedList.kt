@@ -361,6 +361,21 @@ class LinkedList<Int>
             }
         }
     }
+    fun reverseLinkedList()
+    {
+        var prev: Node<Int>? = null
+        var curr = head
+
+        while (curr != null)
+        {
+            head = head?.next
+            curr.next = prev
+            prev = curr
+            curr = head
+        }
+        head = prev
+        showLinkedList()
+    }
 }
 fun main()
 {
@@ -385,7 +400,9 @@ fun main()
         println("Press 12 = deleting the specific node that has given value")
         println("Press 13 = deleting the node at given position")
         println("Press 14 = delete the entire list")
-        println("Press 15 = Exit")
+        println("Press 15 = Reverse the entire linked list")
+        println("Press 16 = sort the entire linked list")
+        println("Press 17 = Exit")
         var choice = newSc.nextInt()
 
         when (choice)
@@ -469,7 +486,15 @@ fun main()
                 linkedList1.deleteEntireList()
                 continue
             }
-            15 -> break
+            15 -> {
+                linkedList1.reverseLinkedList()
+                continue
+            }
+            16 -> {
+                linkedList1
+                continue
+            }
+            17 -> break
         }
     }
     println("-------------------------------------------------------------")
