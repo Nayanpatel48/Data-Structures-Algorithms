@@ -19,7 +19,8 @@ class Stack
     {
         if (stack.isEmpty())
             return 0
-        else {
+        else
+        {
             val a = stack.removeLast()
             return a
         }
