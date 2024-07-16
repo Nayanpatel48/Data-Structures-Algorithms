@@ -6,17 +6,20 @@ class Node<Int>(var value: Int)
 {
     var next: Node<Int>? = null
 }
-class LinkedList<Int> {
+class LinkedList<Int>
+{
     private var head: Node<Int>? = null
 
     // Add a new node at the beginning of the linked list
-    fun prepend(value: Int): String {
+    fun prepend(value: Int): String
+    {
         //create an empty node as well as initializing it
         val newNode = Node(value)
 
         if (head == null)
             head = newNode
-        else {
+        else
+        {
             newNode.next = head
             head = newNode
         }
@@ -24,7 +27,8 @@ class LinkedList<Int> {
     }
 
     // Add a new node to the end of the list
-    fun append(value: Int) {
+    fun append(value: Int)
+    {
         //created an empty node as well as initialized it
         val newNode = Node(value)
 
@@ -44,7 +48,8 @@ class LinkedList<Int> {
     }
 
     // Insert a new node after a specific value (assuming values are unique)
-    fun insertAfter(valueToInsertAfter: Int, value: Int) {
+    fun insertAfter(valueToInsertAfter: Int, value: Int)
+    {
         //create and initialize the new node
         val newNode = Node(value)
 
@@ -52,7 +57,8 @@ class LinkedList<Int> {
         var current = head
 
         //traverse the list until the node N not found
-        while (current != null) {
+        while (current != null)
+        {
             if (current.value == valueToInsertAfter)
                 break
             current = current.next
@@ -60,18 +66,21 @@ class LinkedList<Int> {
 
         if (current == null)
             println("No such element exists!")
-        else {
+        else
+        {
             newNode.next = current.next
             current.next = newNode
         }
         println("$value is inserted after $valueToInsertAfter successfully!")
     }
 
-    fun insertBefore(valueToInsertBefore: Int, value: Int): String {
+    fun insertBefore(valueToInsertBefore: Int, value: Int): String
+    {
         //create and insert new node
         val newNode = Node(value)
 
-        if (head?.value == valueToInsertBefore) {
+        if (head?.value == valueToInsertBefore)
+        {
             newNode.next = head
             head = newNode
             return "$value is inserted after $valueToInsertBefore successfully!"
@@ -80,13 +89,15 @@ class LinkedList<Int> {
         var current = head
         var previous = head
 
-        while (current?.value != valueToInsertBefore) {
+        while (current?.value != valueToInsertBefore)
+        {
             previous = current
             current = current?.next
             if (current == null)
                 break
         }
-        if (current != null) {
+        if (current != null)
+        {
             newNode.next = current
             previous?.next = newNode
             return "$value is inserted after $valueToInsertBefore successfully!"
@@ -95,9 +106,11 @@ class LinkedList<Int> {
     }
 
     // Print the elements of the linked list
-    fun showLinkedList() {
+    fun showLinkedList()
+    {
         //checking if linked list is empty or not
-        if (head == null) {
+        if (head == null)
+        {
             println("Linked list is empty!")
             return
         }
@@ -105,19 +118,22 @@ class LinkedList<Int> {
         var current = head
 
         //traverse node one by one to print the data
-        while (current != null) {
+        while (current != null)
+        {
             print("${current.value} -> ")
             current = current.next
         }
     }
 
-    fun countNumberOfNodes(): kotlin.Int {
+    fun countNumberOfNodes(): kotlin.Int
+    {
         //initialize traversal
         var save = head
         var i = 0
 
         //count the number of nodes in the list
-        while (save != null) {
+        while (save != null)
+        {
             i++
             save = save.next
         }
@@ -125,7 +141,8 @@ class LinkedList<Int> {
         return i
     }
 
-    fun searchingAnElement(value: Int): String {
+    fun searchingAnElement(value: Int): String
+    {
         //checking underflow
         if (head == null)
             return "Linked list is empty!!"
@@ -134,7 +151,8 @@ class LinkedList<Int> {
         var save = head
 
         //search for element 'value'
-        while (save?.value != value) {
+        while (save?.value != value)
+        {
             save = save?.next
             if (save == null)
                 break
@@ -147,7 +165,8 @@ class LinkedList<Int> {
             "Element exists!!"
     }
 
-    fun insertAtSpecificPosition(position: kotlin.Int, value: Int): String {
+    fun insertAtSpecificPosition(position: kotlin.Int, value: Int): String
+    {
         //is position node found in the list
         if (position > countNumberOfNodes())
             return "Position not found" // Modify the return message as needed
@@ -156,7 +175,8 @@ class LinkedList<Int> {
         val newNode = Node(value)
 
         //check if position is 1 if then newNode becomes first node
-        if (position == 1) {
+        if (position == 1)
+        {
             newNode.next = head?.next
             head = newNode
             return "$value inserted successfully at position $position"
@@ -177,7 +197,8 @@ class LinkedList<Int> {
 //            save?.next = newNode
 //            return "$value inserted successfully at position $position"
 //        }
-        while (j != position - 1) {
+        while (j != position - 1)
+        {
             save = save?.next
             j++
         }
@@ -189,7 +210,8 @@ class LinkedList<Int> {
         return "$value inserted successfully at position $position"
     }
 
-    fun deleteFromBeginning(): String {
+    fun deleteFromBeginning(): String
+    {
         // Check if the list is empty
         if (head == null)
             return "List is empty. Cannot delete from beginning."
@@ -206,12 +228,14 @@ class LinkedList<Int> {
         return "Successfully deleted node from the beginning."
     }
 
-    fun deleteFromEnd(): String {
+    fun deleteFromEnd(): String
+    {
         if (head == null)
             return "List is empty. Cannot delete from ending."
 
         //if there is only one node in the list
-        if (head?.next == null) {
+        if (head?.next == null)
+        {
             val x = head?.value
             head = null
             return "$x is deleted from ending of the linked list."
@@ -230,18 +254,21 @@ class LinkedList<Int> {
         return "$x is deleted from beginning of the linked list."
     }
 
-    fun deleteNodeAfterNode(value: Int): String {
+    fun deleteNodeAfterNode(value: Int): String
+    {
         //checking that linked list is empty or not
         if (head == null)
             return "Linked list is empty."
         //traverse the node until the node is not found
         var save = head
-        while (save?.value != value) {
+        while (save?.value != value)
+        {
             save = save?.next
             if (save == null)
                 break
         }
-        if (save != null && save.next != null) {
+        if (save != null && save.next != null)
+        {
             val x = save.next?.value
             save.next = save.next?.next
             return "$x is deleted successfully!"
@@ -254,13 +281,15 @@ class LinkedList<Int> {
         return "There is no node after node contains value $value"
     }
 
-    fun deleteParticularValueNode(value: Int): String {
+    fun deleteParticularValueNode(value: Int): String
+    {
         //checking that linked list is empty or not
         if (head == null)
             return "Linked list is empty."
 
         //if first node contains value n
-        if (head?.value == value) {
+        if (head?.value == value)
+        {
             val x = head?.value
             head = head?.next
             return "$x is deleted successfully!"
@@ -270,7 +299,8 @@ class LinkedList<Int> {
         var save = head
         var prev = head
 
-        while (save?.value != value) {
+        while (save?.value != value)
+        {
             prev = save
             save = save?.next
             if (save == null)
@@ -278,7 +308,8 @@ class LinkedList<Int> {
         }
 
         //delete the node to be deleted
-        if (save != null) {
+        if (save != null)
+        {
             val x = save.value
             prev?.next = save.next
             return "$x is deleted successfully!"
@@ -286,7 +317,8 @@ class LinkedList<Int> {
         return "Given node not found in the list!"
     }
 
-    fun deleteAtSpecificPosition(pos: kotlin.Int): String {
+    fun deleteAtSpecificPosition(pos: kotlin.Int): String
+    {
         //check whether the linked list is empty or not
         if (head == null)
             return "Linked list is empty!"
@@ -296,7 +328,8 @@ class LinkedList<Int> {
             return "Invalid position entered!"
 
         //if 1st node to be deleted
-        if (pos == 1) {
+        if (pos == 1)
+        {
             val x = head?.value
             var del = head
             del = null
@@ -307,7 +340,8 @@ class LinkedList<Int> {
         //traverse the list till (pos-1) not found
         var save = head
         var i = 1
-        while (i != pos - 1) {
+        while (i != pos - 1)
+        {
             save = save?.next
             i++
         }
@@ -325,22 +359,27 @@ class LinkedList<Int> {
         return "$x is deleted successfully from position $pos."
     }
 
-    fun deleteEntireList() {
+    fun deleteEntireList()
+    {
         var save = head
 
-        if (head != null) {
-            while (save != null) {
+        if (head != null)
+        {
+            while (save != null)
+            {
                 println(deleteFromBeginning())
                 save = head
             }
         }
     }
 
-    fun reverseLinkedList() {
+    fun reverseLinkedList()
+    {
         var prev: Node<Int>? = null
         var curr = head
 
-        while (curr != null) {
+        while (curr != null)
+        {
             head = head?.next
             curr.next = prev
             prev = curr
