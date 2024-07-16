@@ -9,7 +9,6 @@ class Node<Int>(var value: Int)
 class LinkedList<Int>
 {
     private var head: Node<Int>? = null
-
     // Add a new node at the beginning of the linked list
     fun prepend(value: Int): String
     {
@@ -25,7 +24,6 @@ class LinkedList<Int>
         }
         return "$value is prepended successfully!"
     }
-
     // Add a new node to the end of the list
     fun append(value: Int)
     {
@@ -46,7 +44,6 @@ class LinkedList<Int>
         }
         println("$value is appended successfully!")
     }
-
     // Insert a new node after a specific value (assuming values are unique)
     fun insertAfter(valueToInsertAfter: Int, value: Int)
     {
@@ -73,7 +70,6 @@ class LinkedList<Int>
         }
         println("$value is inserted after $valueToInsertAfter successfully!")
     }
-
     fun insertBefore(valueToInsertBefore: Int, value: Int): String
     {
         //create and insert new node
@@ -104,7 +100,6 @@ class LinkedList<Int>
         }
         return "Element not found in the list!"
     }
-
     // Print the elements of the linked list
     fun showLinkedList()
     {
@@ -124,7 +119,6 @@ class LinkedList<Int>
             current = current.next
         }
     }
-
     fun countNumberOfNodes(): kotlin.Int
     {
         //initialize traversal
@@ -140,7 +134,6 @@ class LinkedList<Int>
         //return value
         return i
     }
-
     fun searchingAnElement(value: Int): String
     {
         //checking underflow
@@ -164,7 +157,6 @@ class LinkedList<Int>
         else
             "Element exists!!"
     }
-
     fun insertAtSpecificPosition(position: kotlin.Int, value: Int): String
     {
         //is position node found in the list
@@ -209,7 +201,6 @@ class LinkedList<Int>
 
         return "$value inserted successfully at position $position"
     }
-
     fun deleteFromBeginning(): String
     {
         // Check if the list is empty
@@ -227,7 +218,6 @@ class LinkedList<Int>
 
         return "Successfully deleted node from the beginning."
     }
-
     fun deleteFromEnd(): String
     {
         if (head == null)
@@ -253,7 +243,6 @@ class LinkedList<Int>
 
         return "$x is deleted from beginning of the linked list."
     }
-
     fun deleteNodeAfterNode(value: Int): String
     {
         //checking that linked list is empty or not
@@ -280,7 +269,6 @@ class LinkedList<Int>
         //if last node contains value
         return "There is no node after node contains value $value"
     }
-
     fun deleteParticularValueNode(value: Int): String
     {
         //checking that linked list is empty or not
@@ -316,7 +304,6 @@ class LinkedList<Int>
         }
         return "Given node not found in the list!"
     }
-
     fun deleteAtSpecificPosition(pos: kotlin.Int): String
     {
         //check whether the linked list is empty or not
@@ -358,7 +345,6 @@ class LinkedList<Int>
 
         return "$x is deleted successfully from position $pos."
     }
-
     fun deleteEntireList()
     {
         var save = head
@@ -372,7 +358,6 @@ class LinkedList<Int>
             }
         }
     }
-
     fun reverseLinkedList()
     {
         var prev: Node<Int>? = null
