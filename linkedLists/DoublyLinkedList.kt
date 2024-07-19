@@ -2,7 +2,7 @@ package linkedLists
 
 import java.util.Scanner
 
-//Node1 is the node name given just to avoide error in this package it is just a normal node
+//Node1 is the node name given just to avoid error in this package it is just a normal node
 class Node1<Int>(var value: Int)
 {
     var next: Node1<Int>? = null
@@ -43,7 +43,26 @@ class LinkedList1<Int>
         //return value
         return i
     }
+    fun insertAtBeginning(value : Int) : String
+    {
+        //create an empty node as well as initializing it
+        var newNode = Node1(value)
 
+        //initializing newNode's fields
+        newNode.value=value
+        newNode.next=null
+        newNode.prev=null
+
+        if (head != null)
+        {
+            newNode.next=head
+            head?.prev=newNode
+            head=newNode
+            return "$value inserted at beginning successfully!!"
+        }
+        head=newNode
+        return "$value inserted at beginning successfully!!"
+    }
 }
 fun main()
 {
@@ -67,12 +86,12 @@ fun main()
         println("Press 11 = delete after a given node")
         println("Press 12 = exit")
         println("Enter choice:")
-        println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         var token = sc.nextInt()
         when (token)
         {
             1 -> {
                 linkedList1.display()
+                println()
                 continue
             }
             2 -> {
@@ -80,7 +99,9 @@ fun main()
                 continue
             }
             3 -> {
-
+                println("Enter value to be inserted:")
+                var x = sc.nextInt()
+                println(linkedList1.insertAtBeginning(x))
                 continue
             }
             4 -> {
@@ -117,5 +138,6 @@ fun main()
             }
             12 -> break
         }
+        println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     }
 }
