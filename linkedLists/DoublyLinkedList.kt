@@ -63,6 +63,31 @@ class LinkedList1<Int>
         head=newNode
         return "$value inserted at beginning successfully!!"
     }
+    fun insertAtEnding(value : Int) : String
+    {
+        //create an empty node as well as initializing it
+        var newNode = Node1(value)
+
+        //initializing newNode's fields
+        newNode.value=value
+        newNode.next=null
+        newNode.prev=null
+
+        if (head==null)
+        {
+            head=newNode
+            return "$value is added at ending of list successfully!"
+        }
+        else
+        {
+            var save = head
+            while (save?.next != null)
+                save=save.next
+            save?.next=newNode
+            newNode.prev=save
+        }
+        return "$value is added at ending of list successfully!"
+    }
 }
 fun main()
 {
@@ -105,7 +130,9 @@ fun main()
                 continue
             }
             4 -> {
-
+                println("Enter value to be inserted:")
+                var x = sc.nextInt()
+                println(linkedList1.insertAtEnding(x))
                 continue
             }
             5 -> {
