@@ -202,6 +202,81 @@ class LinkedList1<Int>
         }
         return "$x deleted from beginning successfully!!"
     }
+    fun deleteFromEnding() : String
+    {
+        //checking that linked list is empty or not
+        if (head == null)
+            return "Linked list is empty!"
+
+        //there is only one node exists in the linked list
+        if (head?.next == null)
+        {
+            val x= head?.value
+            head = null
+            return "$x value is deleted from the ending!"
+        }
+
+        //initialize traversal
+        var save = head
+        while (save?.next != null)
+            save=save.next
+
+        val x = save?.value
+        save?.prev?.next=null
+        return "$x value is deleted from the ending!"
+    }
+    fun deleteAfterNode(value: Int) : String
+    {
+        if (head == null)
+            return "Linked list is empty!!"
+
+        //traverse list till the node contains value is not found
+        var save = head
+        while (save?.value != value)
+        {
+            save=save?.next
+            if (save==null)
+                break
+        }
+
+        if (save!=null && save.next != null)
+        {
+            val x = save.next?.value
+            save.next?.next?.prev = save
+            save.next = save.next?.next
+            return "$x is deleted after node containing value $value"
+        }
+        else if (save == null)
+            return "Given node not found!"
+        else
+            return "NO node after given node!!"
+    }
+    fun deleteBeforeNode(value: Int) : String
+    {
+        if (head == null) // checking whether linked list is empty or not
+            return "The linked list is empty!!"
+
+        //traversing the list
+        var save = head
+        while (save?.value != value)
+        {
+            save=save?.next
+            if (save == null)
+                break
+        }
+
+        if (save != null && save.prev != null)
+        {
+            val x= save.prev?.value
+            save.prev?.prev?.next=save
+            save.prev = save.prev?.prev
+            return "Node with value $x is deleted before node $value"
+        }
+        else if (save == null)
+            return "Given node not found!"
+        else
+            return "NO node before the given node!"
+    }
 }
 fun main()
 {
@@ -221,8 +296,8 @@ fun main()
         println("Press 7 = insert at specific location")
         println("Press 8 = delete from beginning")
         println("Press 9 = delete from ending")
-        println("Press 10 = delete the specific node")
-        println("Press 11 = delete after a given node")
+        println("Press 10 = delete after a given node")
+        println("Press 11 = delete before a given node")
         println("Press 12 = exit")
         println("Enter choice:")
         var token = sc.nextInt()
@@ -278,15 +353,19 @@ fun main()
                 continue
             }
             9 -> {
-
+                println(linkedList1.deleteFromEnding())
                 continue
             }
             10 -> {
-
+                println("Enter value after which you want to delete:")
+                val y = readln().toInt()
+                println(linkedList1.deleteAfterNode(y))
                 continue
             }
             11 -> {
-
+                println("Enter value before which you want to delete:")
+                val y = readln().toInt()
+                println(linkedList1.deleteBeforeNode(y))
                 continue
             }
             12 -> break
