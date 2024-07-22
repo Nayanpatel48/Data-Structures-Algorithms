@@ -4,7 +4,8 @@ fun main()
 {
     //remember array size will never change
     //creates an array with element 1,2,3
-    val simpleArray = arrayOf(1,2,3)
+    val simpleArray : Array<Int> = arrayOf(1,2,3) // if not mention Array<Int> its ok
+
     println(simpleArray.joinToString(" "))
 
     //create an array of given size with 5 null elements

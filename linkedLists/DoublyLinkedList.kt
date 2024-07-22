@@ -131,7 +131,6 @@ class LinkedList1<Int>
             head=newNode
             return "$valueToBeInserted is inserted before $value successfully!!"
         }
-
         //traversing linked list till the node containing value not found
         var save = head
         while (save?.value != value)
@@ -150,6 +149,58 @@ class LinkedList1<Int>
         }
         else
             return "Node not found!"
+    }
+    fun insertAtSpecificPosition(pos : kotlin.Int, valueToBeInserted : Int) : String
+    {
+        //create new node as well as initializing data fields
+        var newNode = Node1(valueToBeInserted)
+        newNode.prev=null
+        newNode.next=null
+
+        //position indicator
+        var count=1
+        //checking validation of position
+        if (pos>totalNodes())
+            return "Position not found"
+
+        //if position is 1
+        if (pos==1)
+        {
+            newNode.next=head
+            head?.prev= newNode
+            head=newNode
+            return "$valueToBeInserted inserted successfully at position $pos"
+        }
+
+        //initialize traversal
+        var save = head
+
+        while (count != pos-1)
+        {
+            save=save?.next
+            count++
+        }
+        newNode.next=save?.next
+        newNode.prev=save
+        save?.next?.prev=newNode
+        save?.next=newNode
+        return "$valueToBeInserted inserted successfully at position $pos"
+    }
+    fun deleteFromBeginning() : String
+    {
+        if (head == null)
+            return "Linked list is empty!!"
+
+        val x = head?.value
+
+        if (head?.next == null)//there is only one element in the list
+            head=null
+        else
+        {
+            head=head?.next
+            head?.prev=null
+        }
+        return "$x deleted from beginning successfully!!"
     }
 }
 fun main()
@@ -215,11 +266,15 @@ fun main()
                 continue
             }
             7 -> {
-
+                println("Enter position:")
+                var x = readln().toInt()
+                println("Enter value to be inserted :")
+                var y = readln().toInt()
+                println(linkedList1.insertAtSpecificPosition(x,y))
                 continue
             }
             8 -> {
-
+                println(linkedList1.deleteFromBeginning())
                 continue
             }
             9 -> {
