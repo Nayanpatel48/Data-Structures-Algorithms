@@ -178,7 +178,6 @@ class LinkedList2<Int>
             insertAtBeginning(valueToBeInserted)
             return "Value inserted successfully!"
         }
-
         //initialize traversal
         var save = head
         while (i != pos-1)
@@ -198,6 +197,49 @@ class LinkedList2<Int>
             save?.next = newNode
         }
         return "Value inserted successfully!"
+    }
+    fun deleteFromBeginning() : String
+    {
+        //check for underflow
+        if (head == null)
+            return "Underflow->.linked list is empty!"
+        //save head data
+        val data = head?.value
+        //if only one node exists
+        if (head?.next == head)
+            head == null
+        else // there is more than one node in the linked list
+        {
+            //initialize traversal
+            var save = head
+            while (save?.next != head)
+                save=save?.next
+            save?.next = head?.next
+            head=head?.next
+        }
+        return "$data is deleted successfully from beginning!"
+    }
+    fun deleteFRomEnding() : String
+    {
+        //check for underflow
+        if (head == null)
+            return "Underflow->.linked list is empty!"
+
+        if (head?.next == head)
+        {
+            val x = head?.value
+            head=null
+            return "$x is deleted from ending of the linked list!"
+        }
+        else
+        {
+            var save = head
+            while (save?.next?.next != head)
+                save=save?.next
+            val x=save?.next?.value
+            save?.next = head
+            return "$x is deleted from ending of the linked list!"
+        }
     }
 }
 fun main()
@@ -280,11 +322,11 @@ fun main()
                 continue
             }
             9 -> {
-
+                println(linkedList2.deleteFromBeginning())
                 continue
             }
             10 -> {
-
+                println(linkedList2.deleteFRomEnding())
                 continue
             }
             11 -> {
