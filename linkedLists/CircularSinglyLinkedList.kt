@@ -110,7 +110,6 @@ class LinkedList2<Int>
     {
         //creating newNode as well as initializing it
         var newNode = Node2<Int>(valueToBeInserted)
-
         //initialize traversal
         var save = head
         while (save?.value != value)
@@ -119,7 +118,6 @@ class LinkedList2<Int>
             if (save?.next == head)
                 break
         }
-
         if (save?.next != head)
         {
             newNode.next = save?.next
@@ -138,13 +136,11 @@ class LinkedList2<Int>
     {
         //creating newNode as well as initializing it
         var newNode = Node2<Int>(valueToBeInserted)
-
         if (head?.value == value)
         {
             insertAtBeginning(valueToBeInserted)
             return "$valueToBeInserted inserted before node containing value $value"
         }
-
         //initialize traversal
         var save = head
         var prev = head
@@ -185,7 +181,6 @@ class LinkedList2<Int>
             save = save?.next
             i++
         }
-
         if (save?.next == head)
         {
             insertAtEnding(valueToBeInserted)
@@ -219,7 +214,7 @@ class LinkedList2<Int>
         }
         return "$data is deleted successfully from beginning!"
     }
-    fun deleteFRomEnding() : String
+    fun deleteFromEnding() : String
     {
         //check for underflow
         if (head == null)
@@ -240,6 +235,34 @@ class LinkedList2<Int>
             save?.next = head
             return "$x is deleted from ending of the linked list!"
         }
+    }
+    fun deleteAfterNode(nodeValue : Int) : String
+    {
+        //check for underflow
+        if (head == null)
+            return "Linked list is empty!"
+
+        //traversing the list till node not found
+        var save = head
+        while (save?.value != nodeValue)
+        {
+            save=save?.next
+            if (save?.next == head)
+                break
+        }
+        if (save?.next != head)
+        {
+            val x = save?.next?.value
+            save?.next=save.next?.next
+            return "$x deleted successfully!"
+        }
+        if (save?.value==nodeValue)
+        {
+            val x = deleteFromBeginning()
+            return "$x deleted successfully!"
+        }
+        else
+            return "Given node is not found!"
     }
 }
 fun main()
@@ -326,11 +349,13 @@ fun main()
                 continue
             }
             10 -> {
-                println(linkedList2.deleteFRomEnding())
+                println(linkedList2.deleteFromEnding())
                 continue
             }
             11 -> {
-
+                println("Enter node value:")
+                val x = readln().toInt()
+                println(linkedList2.deleteAfterNode(x))
                 continue
             }
             12 -> {
