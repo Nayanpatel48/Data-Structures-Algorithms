@@ -23,5 +23,9 @@ fun main()
     var array = Array<Int>(3) {5}
     println(array.joinToString(" "))
 
-    //
+    //creating array of custom size and with all elements zer0
+    val size = 5
+    val myArray = Array<Int>(size) {0}
+    for (i in myArray)
+        println(i)
 }

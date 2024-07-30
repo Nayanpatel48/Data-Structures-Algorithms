@@ -250,12 +250,12 @@ class LinkedList2<Int>
             if (save?.next == head)
                 break
         }
-        if (save?.next != head)
-        {
-            val x = save?.next?.value
-            save?.next=save.next?.next
-            return "$x deleted successfully!"
-        }
+//        if (save?.next != head)
+//        {
+//            val x = save?.next?.value
+//            save?.next=save.next?.next
+//            return "$x deleted successfully!"
+//        }
         if (save?.value==nodeValue)
         {
             val x = deleteFromBeginning()
