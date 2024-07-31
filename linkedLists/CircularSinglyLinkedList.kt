@@ -264,6 +264,38 @@ class LinkedList2<Int>
         else
             return "Given node is not found!"
     }
+    fun deleteSpecificValueNode(value : Int) : String
+    {
+        //check for underflow
+        if (head == null)
+            return "Linked list is empty!"
+
+        if (head?.value == value)
+            return "${deleteFromBeginning()} is deleted successfully!"
+
+        //initialize traversal
+        var save = head
+        var prev = save
+
+        while (save?.value != value)
+        {
+            prev = save
+            save=save?.next
+            if (save?.next == head)
+                break
+        }
+
+        if (save?.next != head)
+        {
+            val x = save?.value
+            prev?.next=save?.next
+            return "$x is deleted successfully!"
+        }
+        else if(save?.value == value)
+            return "${deleteFromEnding()} is deleted successfully!"
+        else
+            return "No node after given node."
+    }
 }
 fun main()
 {
@@ -286,10 +318,9 @@ fun main()
         println("Press 9 = delete from beginning")
         println("Press 10 = delete from ending")
         println("Press 11 = delete after a given node")
-        println("Press 12 = delete before a given node")
-        println("Press 13 = delete the node with specific value")
-        println("Press 14 = delete the node at specific position")
-        println("Press 15 = exit")
+        println("Press 12 = delete the node with specific value")
+        println("Press 13 = delete the node at specific position")
+        println("Press 14 = exit")
         println("Enter choice:")
         var token = sc.nextInt()
         when (token)
@@ -359,18 +390,16 @@ fun main()
                 continue
             }
             12 -> {
-
+                println("Enter node value:")
+                val x = readln().toInt()
+                println(linkedList2.deleteSpecificValueNode(x))
                 continue
             }
             13 -> {
 
                 continue
             }
-            14 -> {
-
-                continue
-            }
-            15 -> break
+            14 -> break
         }
     }
 }
