@@ -247,15 +247,15 @@ class LinkedList2<Int>
         while (save?.value != nodeValue)
         {
             save=save?.next
-            if (save?.next == head)
+            if (save?.next == head)//last node
                 break
         }
-//        if (save?.next != head)
-//        {
-//            val x = save?.next?.value
-//            save?.next=save.next?.next
-//            return "$x deleted successfully!"
-//        }
+        if (save?.next != head)
+        {
+            val x = save?.next?.value
+            save?.next=save?.next?.next
+            return "$x deleted successfully!"
+        }
         if (save?.value==nodeValue)
         {
             val x = deleteFromBeginning()
@@ -270,6 +270,7 @@ class LinkedList2<Int>
         if (head == null)
             return "Linked list is empty!"
 
+        //first node contain value to be deleted
         if (head?.value == value)
             return "${deleteFromBeginning()} is deleted successfully!"
 
@@ -296,6 +297,37 @@ class LinkedList2<Int>
         else
             return "No node after given node."
     }
+    fun deleteNodeAtSpecificPos(pos : kotlin.Int) : String
+    {
+        //checking for underflow
+        if (head == null)
+            return "Underflow->Linked list is empty."
+
+        //checking position is there in linked list or not
+        if (pos>countTotalNodes())
+            return "Position not found."
+
+        if (pos == 1)//first node to be deleted
+            return deleteFromBeginning()
+
+        //if position is greater than 1 then traverse the linked list till node not found
+        //initialize traversal
+        var save = head
+        var i=1
+        while (i != pos-1)
+        {
+            save=save?.next
+            i++
+        }
+        if (save?.next?.next==head)//last node to be deleted
+            return deleteFromEnding()
+        else//element to be deleted in between first and last node in the linked list
+        {
+            val x = save?.next?.value
+            save?.next=save?.next?.next
+            return "$x is deleted from position $pos."
+        }
+    }
 }
 fun main()
 {
@@ -320,7 +352,8 @@ fun main()
         println("Press 11 = delete after a given node")
         println("Press 12 = delete the node with specific value")
         println("Press 13 = delete the node at specific position")
-        println("Press 14 = exit")
+        println("Press 14 = delete entire linked list")
+        println("Press 15 = exit")
         println("Enter choice:")
         var token = sc.nextInt()
         when (token)
@@ -396,10 +429,15 @@ fun main()
                 continue
             }
             13 -> {
-
+                println("Enter position of the node to be deleted:")
+                val x = readln().toInt()
+                println(linkedList2.deleteNodeAtSpecificPos(x))
                 continue
             }
-            14 -> break
+            14 -> {
+
+            }
+            15 -> break
         }
     }
 }
