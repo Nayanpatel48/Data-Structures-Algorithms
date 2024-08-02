@@ -328,6 +328,23 @@ class LinkedList2<Int>
             return "$x is deleted from position $pos."
         }
     }
+    fun deleteEntireList() : String
+    {
+        if (head != null)//this block will be executed only if linked list is not empty
+        {
+            //initializing traversal
+            var save = head
+            while (save?.next != head)
+            {
+                println(deleteFromBeginning())
+                save=head
+            }
+            println(deleteFromEnding())
+            return "done."
+        }
+        else
+            return "Underflow->Linked list is empty!"
+    }
 }
 fun main()
 {
@@ -435,7 +452,7 @@ fun main()
                 continue
             }
             14 -> {
-
+                println(linkedList2.deleteEntireList())
             }
             15 -> break
         }
