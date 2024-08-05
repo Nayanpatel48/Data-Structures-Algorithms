@@ -1,4 +1,4 @@
-package stackJava
+package stack
 
 import java.util.Scanner
 
