@@ -39,6 +39,7 @@ public class ArrayList
         System.out.println("Collection2 data:"+collection2);
 
 
+        @SuppressWarnings("unchecked")
         java.util.ArrayList<String> collection1Clone = (java.util.ArrayList<String>)(collection1.clone());
         collection1Clone.addAll(collection2);
         System.out.println("Collection 1 clone:"+collection1Clone);
@@ -61,5 +62,11 @@ public class ArrayList
         //Element in collection 1 but not in collection 2
         collection1.removeAll(collection2);
         System.out.println("Element in collection 1 but not in collection 2:"+collection1);
+
+        java.util.Collection<String> collection3 = new java.util.ArrayList<>();
+        collection3.add("New York");
+        collection3.add("America");
+        collection3.add("Russia");
+        System.out.println("The elements inside collection3 are:"+collection3);
     }
 }
