@@ -1,4 +1,4 @@
-package arrayList;
+package Collections;
 
 public class ArrayList
 {
