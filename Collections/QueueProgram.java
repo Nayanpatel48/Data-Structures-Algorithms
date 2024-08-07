@@ -15,6 +15,7 @@ public class QueueProgram
         queue1.offer(89);
         System.out.println("Content inside queue: "+queue1);
 
+
         //below:retrieving and removing element from the head of queue
         //in poll method queue empty => null
         System.out.println(queue1.poll()+" is removed from queue head.");
