@@ -14,6 +14,7 @@ public class ArrayList
         collection1.add("Akhil");
         collection1.add("DC");
         collection1.add("xyz");
+        collection1.add("ui");
         System.out.println(collection1);
 
         //adding new element at a specific index
