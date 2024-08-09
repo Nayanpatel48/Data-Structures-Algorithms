@@ -2,9 +2,8 @@ package setAndMaps;
 
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
-public class TestHashSet
+public class Set
 {
     public static void main(String[] args)
     {
@@ -15,7 +14,7 @@ public class TestHashSet
         //we can create an empty HashSet using no rag constructor , we can create SEt from the existing collection also
         //initial capacity = 16 , load factor = 0.75
         //if size of set becomes size =>16*0.75 = 12 the size doubles
-        Set<String> s1 = new HashSet<>();
+        java.util.Set<String> s1 = new HashSet<>();
         s1.add("Rajkot");
         s1.add("Ahemadabad");
         s1.add("Surat");
@@ -36,7 +35,7 @@ public class TestHashSet
 
         //creating an empty set
         //adding all elements of set1 into set 2
-        Set<String> s2 = new HashSet<>(s1);
+        java.util.Set<String> s2 = new HashSet<>(s1);
         s1.add("America");
         s1.add("Luciana");
         s1.add("Canada");
