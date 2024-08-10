@@ -27,7 +27,7 @@ public class ArrayList
         //checking whether the list contains the specific element or not
         System.out.println(collection1.contains("Harshil"));
         System.out.println(collection1.contains("xyz"));
-
+        
         //making clone ArrayList
         //here we copied entire collection1 into collection1Clone ArrayList then we added the element
         java.util.ArrayList<String> collection2 = new java.util.ArrayList<>();
@@ -57,6 +57,7 @@ public class ArrayList
         collection1.add("xyz");
         collection2.add("Spider");
         collection2.add("Deadpool");
+        collection2.add("Superman");
         collection2.add("Marvel");
         collection2.add("DC");
         collection2.add("xyz");
