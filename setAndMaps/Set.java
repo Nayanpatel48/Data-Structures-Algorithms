@@ -51,6 +51,6 @@ public class Set
 
         s2.retainAll(s1);
         System.out.println("After removing all different elements in set 1 from set 2 , set 2 is : "+s2);
-        //[Canada, Rajkot, Ahemadabad, Surat, Vapi]
+        //[Canada, Rajkot, Ahmadabad, Surat, Vapi]
     }
 }
