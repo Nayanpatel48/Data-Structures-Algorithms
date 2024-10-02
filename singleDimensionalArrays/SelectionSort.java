@@ -1,6 +1,5 @@
 /*Always do investigative study*/
 package singleDimensionalArrays;
-import org.jetbrains.annotations.NotNull;
 import java.util.Scanner;
 
 public class SelectionSort
