@@ -1,7 +1,5 @@
 /*Always do investigative study*/
 package sorting;
-
-import org.jetbrains.annotations.NotNull;
 import java.util.Scanner;
 
 public class SelectionSort
@@ -45,7 +43,7 @@ public class SelectionSort
         }
         printArray(array);
     }
-    public static void printArray(@NotNull int[] array)
+    public static void printArray(int[] array)
     {
         for (int e : array)
             System.out.print(e+" ");

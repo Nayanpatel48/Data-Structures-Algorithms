@@ -1,7 +1,5 @@
 package setAndMaps;
 
-import java.util.Scanner;
-
 public class PerformanceTestingMethodTime
 {
     public static void main(String[] args)

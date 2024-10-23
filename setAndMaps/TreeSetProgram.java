@@ -80,7 +80,6 @@ public class TreeSetProgram
         System.out.println(set3.remove(23));//true (it says true if the value is deleted successfully otherwise returns false)
         System.out.println("Before performing .remove() operation set3 :"+set3);
         //Before performing .remove() operation set3 :[22, 45, 48, 90, 7878]
-        System.out.println(set3.reversed());
         //[7878, 90, 48, 45, 22] (note:there is no change in original set3 , it will show us set in reverse order)
         System.out.println("Original set3:"+set3);
         System.out.println("The subset of set3 containing values in between 0 & 200: "+set3.subSet(0,200));
