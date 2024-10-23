@@ -1,4 +1,4 @@
-package Collections;
+package collections;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -52,8 +52,6 @@ public class TestListArrayListAndLinkedList
         List<Integer> list3 = new LinkedList<>(list1);
         System.out.println("Before insertion:"+list3);
         list3.add(2,0);
-        list3.addFirst(12);
-        list3.addLast(13);
         System.out.println("After insertion:"+list3);
 
         //list iterator for list3
