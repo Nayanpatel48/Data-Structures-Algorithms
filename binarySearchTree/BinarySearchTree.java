@@ -41,7 +41,7 @@ public class BinarySearchTree {
         inorder(root.left);
 
         //print the data
-        System.out.print(root.data+" ");
+        System.out.print(root.data+", ");
 
         //traverse right subtree
         inorder(root.right);
