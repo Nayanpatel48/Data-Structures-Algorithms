@@ -66,7 +66,7 @@ public class BinarySearchTree {
     public static Node deleteNode(Node root, int value){
         //if the value to be deleted is smaller than the root data then value will
         //be deleted  from left subtree
-        //we will attach the node that we get from the left subtree
+        //we will attach the node that we will get from the left subtree
         if(root.data > value){
             root.left = deleteNode(root.left, value);
         } else if(root.data < value){
