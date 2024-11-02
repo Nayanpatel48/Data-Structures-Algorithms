@@ -46,8 +46,57 @@ public class BinarySearchTree {
         //traverse right subtree
         inorder(root.right);
     }
+    public static boolean searchNode(Node root,int key){
+        //base case : If root node becomes null then return false
+        if(root == null){
+            return false;
+        }
+
+        //if `key value` is less than root data then search key value in left subtree
+        if(root.data > key){
+            return searchNode(root.left, key);
+        } else if(root.data == key){
+            //if key value is found then return true
+            return true;
+        } else {
+            //if `key value` is greater than root data then search key value in right subtree
+            return searchNode(root.right, key);
+        }
+    }
+    public static Node deleteNode(Node root, int value){
+        //if the value to be deleted is smaller than the root data then value will
+        //be deleted  from left subtree
+        //we will attach the node that we get from the left subtree
+        if(root.data > value){
+            root.left = deleteNode(root.left, value);
+        } else if(root.data < value){
+            root.right = deleteNode(root.right, value);
+        } else { // root.data == value
+            //case 1 leaf node
+            if(root.left == null && root.right == null){
+                return null;
+            }
+            //case 2
+            if(root.left == null){
+                return root.right;
+            } else if(root.right == null){
+                return root.left;
+            }
+            //case 3 most important case
+            Node IS = inOrderSuccessor(root.right);
+            root.data = IS.data;
+            root.right = deleteNode(root.right, IS.data);
+        }
+        return root;
+    }
+    public static Node inOrderSuccessor(Node root){
+        while(root.left != null){
+            root = root.left;
+        }
+        return root;
+    }
     public static void main(String[] args){
-        int[] values = {5,1,3,4,2,7};
+        int[] values = {8,5,3,1,4,6,10,11,14};
 
         //We have initialized the `root` as null inorder to construct the binary tree from
         //empty tree.
@@ -60,5 +109,22 @@ public class BinarySearchTree {
         //This below function will return the array in sorted form.
         //By this we can conclude that the BINARY SEARCH TREE is constructed successfully.
         inorder(root);
+
+        System.out.println();
+
+        if(searchNode(root, 3)){
+            System.out.println("3 exists.");
+        } else {
+            System.out.println("3 does not exist.");
+        }
+        if(searchNode(root, 9)){
+            System.out.println("9 exists.");
+        } else {
+            System.out.println("9 does not exist.");
+        }
+        //delete 4
+        deleteNode(root, 5);
+        inorder(root);
+
     }
 }
