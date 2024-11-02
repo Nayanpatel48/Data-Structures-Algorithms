@@ -1,4 +1,4 @@
-package collections;
+package collections_using_built_in;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
