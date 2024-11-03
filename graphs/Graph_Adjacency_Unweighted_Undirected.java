@@ -10,7 +10,7 @@ public class Graph_Adjacency_Unweighted_Undirected {
         public Edge(int src, int dest){
             this.src=src;
             this.dest=dest;
-        }
+        }//Edge class over
     }
     public static void createGraph(ArrayList<Edge> graph[]){
         //looping through each index of the graph inorder to replace the `null` with 'empty ArrayList'
@@ -33,16 +33,18 @@ public class Graph_Adjacency_Unweighted_Undirected {
 
         graph[3].add(new Edge(3,1));
         graph[3].add(new Edge(3,2));
-    }
+    }// CreateGraph function over
     public static void main(String[] args){
         int v=4;
         ArrayList<Edge> graph[] = new ArrayList[v];
 
+        //creating graph
         createGraph(graph);
+
         //print 2's neighbours
         for(int i=0;i<graph[2].size();i++){
             Edge e = graph[2].get(i);
-            System.out.print(e.dest+" ");
+            System.out.print(e.dest+", ");
         }
-    }
+    }//main function over
 }
