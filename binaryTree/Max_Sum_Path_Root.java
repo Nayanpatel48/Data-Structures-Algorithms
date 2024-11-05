@@ -1,5 +1,7 @@
 package binaryTree;
 
+//link of solution:
+//https://www.codewars.com/kata/reviews/57e5598282afa89ed4000086/groups/6729dd4884fcd351ea1507d5
 public class Max_Sum_Path_Root {
     static class Node1 {
 
