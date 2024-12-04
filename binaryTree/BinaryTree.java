@@ -97,6 +97,7 @@ class BinaryTreeCode {
             return;
         }
 
+        //focus on initialization.
         Queue<Node> q = new LinkedList<>();
         q.add(root);
         q.add(null);

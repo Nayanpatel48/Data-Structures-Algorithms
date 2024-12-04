@@ -14,5 +14,12 @@ public class ArrayList {
         for(int i=0;i<list1.size();i++){
             System.out.print(list1.get(i)+" ");
         }
+        list1.remove(0);
+
+        System.out.println();
+        //accessing each element by its index
+        for(int i=0;i<list1.size();i++) {
+            System.out.print(list1.get(i) + " ");
+        }
     }
 }
