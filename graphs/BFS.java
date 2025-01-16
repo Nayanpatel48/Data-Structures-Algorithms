@@ -91,6 +91,70 @@ public class BFS {
             }
         }
     }
+    // Helper function to perform DFS and populate the stack with vertices in topological order
+    public static void topSortUntil(ArrayList<Edge>[] graph, int curr, boolean[] vis, Stack<Integer> stack) {
+        // Mark the current node as visited
+        vis[curr] = true;
+
+        // Traverse all neighbors of the current node
+        for (int i = 0; i < graph[curr].size(); i++) {
+            // Get the current edge
+            Edge e = graph[curr].get(i);
+
+            // If the destination node is not visited, perform DFS on it
+            if (!vis[e.dest]) {
+                topSortUntil(graph, e.dest, vis, stack);
+            }
+        }
+
+        // Push the current node to the stack after all its neighbors are processed
+        stack.push(curr);
+    }
+
+    // Function to perform Topological Sorting on a Directed Acyclic Graph (DAG)
+    public static void topSort(ArrayList<Edge>[] graph, int v) {
+        // Create a boolean array to track visited nodes
+        boolean[] vis = new boolean[v];
+
+        // Stack to store the topological order of vertices
+        Stack<Integer> stack = new Stack<>();
+
+        // Perform DFS on all unvisited nodes to process the entire graph
+        for (int i = 0; i < v; i++) {
+            if (!vis[i]) {
+                topSortUntil(graph, i, vis, stack);
+            }
+        }
+
+        // Pop elements from the stack to print the topological order
+        System.out.print("Topological Order: ");
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop() + " ");
+        }
+    }
+    public static boolean isCycleExistUndirected(ArrayList<Edge>[] graph, boolean[] vis, int curr, int parent){
+        //mark the current node as visited
+        vis[curr]=true;
+
+        //traverse all the neighbors of the current node
+        for(int i=0;i<graph[curr].size();i++){
+            //Get the current edge
+            Edge e = graph[curr].get(i);
+
+            // condition 1 : if the current node is visited, but it's parent not then return true
+            if (vis[e.dest] && e.dest != parent){
+                return true;
+            } else if (!vis[e.dest]){
+                if(isCycleExistUndirected(graph,vis, e.dest, curr)) {
+                    //condition 3 :
+                    return true;
+                }
+            }
+        }
+
+        //if cycle does not exist
+        return false;
+    }
     public static void main(String[] args) {
         int v = 7;
         ArrayList<Edge>[] graph = new ArrayList[v];
@@ -113,5 +177,13 @@ public class BFS {
         int src = 0, tar = 5;
         System.out.println("All Paths from " + src + " to " + tar + ":");
         printAllPath(graph, vis, src, src + "", tar);
+
+        //Topological sorting
+        topSort(graph, v);
+
+        vis = new boolean[v]; // Reset the visited array
+        //is cycle exits
+        System.out.print(isCycleExistUndirected(graph, vis, 0,-1));
+
     }//main function over
 }
