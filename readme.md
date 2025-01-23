@@ -18,4 +18,4 @@
     - [Cycle Detection in Directed Graph](#cycle-detection-in-directed-graph)
     - [Cycle Detection in Undirected Graph](#cycle-detection-in-undirected-graph)
 10. [GraphCreationUsing2DArray](#GraphCreationUsing2DArray)
-11. 
+11. [prim's algo](#prim's algo)
