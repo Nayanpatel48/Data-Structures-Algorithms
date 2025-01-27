@@ -45,7 +45,7 @@ public class PrimsAlgo {
         }
     }
 
-    // e log e time complexity
+    // e*(log e) time complexity
     public static void primsAlgo(ArrayList<Edge>[] graph, int V) {
         PriorityQueue<Pair> pq = new PriorityQueue<>();
         boolean[] vis = new boolean[V];
@@ -68,7 +68,6 @@ public class PrimsAlgo {
                 }
             }
         }
-
         System.out.println("Minimum Spanning Tree Cost: " + mstCost);
     }
 
