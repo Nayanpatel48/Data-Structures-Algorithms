@@ -19,4 +19,5 @@
     - [Cycle Detection in Undirected Graph](#cycle-detection-in-undirected-graph)
 10. [GraphCreationUsing2DArray](#GraphCreationUsing2DArray)
 11. [Prim's algo](#Prim's algo)
-12. [](#)
+12. [Kosaraju's algo](#Kosaraju's algo)
+13. [Edge converter](#Edge converter)

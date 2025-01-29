@@ -20,3 +20,4 @@
 10. [GraphCreationUsing2DArray](#GraphCreationUsing2DArray)
 11. [Prim's algo](#Prim's algo)
 12. [Kosaraju's algo](#Kosaraju's algo)
+13. [Edge converter](#Edge converter)
