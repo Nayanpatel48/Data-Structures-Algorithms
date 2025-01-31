@@ -1,4 +1,4 @@
-package StringToCharArrayViceVersa;
+package String;
 
 public class StringToCharArr {
     public static void main(String[] args){

@@ -1,6 +1,4 @@
-package StringToCharArrayViceVersa;
-
-import java.util.Arrays;
+package String;
 
 public class CharacterArrToString {
     public static void main(String[] args){

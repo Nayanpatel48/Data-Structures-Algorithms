@@ -68,7 +68,7 @@ public class KosarajusAlgo {
         ArrayList<Edge>[] transposeGraph = new ArrayList[V];
         for (int i = 0; i < graph.length; i++) {
             vis[i]=false;
-            transposeGraph[i] = new ArrayList<Edge>();
+            transposeGraph[i] = new ArrayList<>();
         }
 
         for (int i=0;i<V;i++){
