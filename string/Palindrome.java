@@ -1,6 +1,6 @@
-package String;
+package string;
 
-class Palidrom {
+class Palindrome {
     public static boolean isPalindrome(String s1) {
         String s = s1.toLowerCase();
         int i = 0;

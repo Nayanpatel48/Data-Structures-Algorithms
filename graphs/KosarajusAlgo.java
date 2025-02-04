@@ -78,7 +78,7 @@ public class KosarajusAlgo {
             }
         }
 
-        //step3 :
+        //step3 :DFS on transposed graph
         while (!s.empty()){
             int curr = s.pop();
             dfs(graph, curr, vis);
