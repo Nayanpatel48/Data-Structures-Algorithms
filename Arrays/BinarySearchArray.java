@@ -1,11 +1,13 @@
 /*Always do investigative study*/
-package singleDimensionalArrays;
+package Arrays;
+
 import java.util.Scanner;
 
-public class SelectionSort
+public class BinarySearchArray
 {
     public static void main(String[] args)
     {
+        //pre-requisite:array should be sored in ascending order
         Scanner sc = new Scanner(System.in);
         int sizeOfArray = sc.nextInt();
 
@@ -15,7 +17,13 @@ public class SelectionSort
         for (int i=0;i<sizeOfArray;i++)
             array1[i] = sc.nextInt();
 
-        selectionSort(array1);
+        System.out.println("Enter value to be searched:");
+        int keyValue = sc.nextInt();
+
+        if (binarySearch(keyValue, array1))
+            System.out.println("Value exists.");
+        else
+            System.out.println("Value does not exists.");
     }
     public static void selectionSort(int[] array)
     {
@@ -41,11 +49,28 @@ public class SelectionSort
                 array[i]=temp;
             }
         }
-        printArray(array);
+        //there is no need to return anything in case of array cause changes
+        //are directly made into array
     }
-    public static void printArray(int[] array)
+    public static boolean binarySearch(int key, int[] array)
     {
-        for (int e : array)
-            System.out.print(e+" ");
+        //first we will sort array
+        selectionSort(array);
+
+        int low=0;
+        int high=array.length-1;
+
+        while (high>=low)
+        {
+            int mid = (high+low)/2;
+            if (array[mid] == key)
+                return true;
+            else if (key>array[mid])//value is in upper bound
+                high = mid;
+            else
+                low=mid+1;
+        }
+        //if value does not exist in an array
+        return false;
     }
 }

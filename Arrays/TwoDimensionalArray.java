@@ -1,5 +1,5 @@
 /**Always do investigative study because it is best*/
-package multiDimensionalArrays;
+package Arrays;
 
 public class TwoDimensionalArray
 {

@@ -1,5 +1,5 @@
 /**Always do investigative study*/
-package singleDimensionalArrays;
+package Arrays;
 
 public class VariableLengthArgumentList
 {
