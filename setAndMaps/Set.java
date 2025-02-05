@@ -18,6 +18,7 @@ public class Set
         s1.add("Rajkot");
         s1.add("Ahemadabad");
         s1.add("Surat");
+
         s1.add("Vapi");
         s1.add("Vapi");
         System.out.println("Duplicates are not here anymore: "+s1);

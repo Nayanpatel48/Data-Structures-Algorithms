@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+### graphs:
 1. [Bellman-Ford Algorithm](#bellman-ford-algorithm)
 2. [Dijkstra's Algorithm](#dijkstras-algorithm)
 3. [Breadth-First Search (BFS)](#breadth-first-search-bfs)
@@ -21,4 +22,26 @@
 11. [Prim's algo](#Prim's algo)
 12. [Kosaraju's algo](#Kosaraju's algo)
 13. [Edge converter](#Edge converter)
-14. [Tarzan's algorithm](#tarzan's algorithm)
+14. [getBridge Problem](#getBridge Problem)
+15. [Tarjan's algorithm](#Tarjan's algorithm)
+
+### Stack: 
+
+### Queue:
+
+### LinkedList:
+
+### binaryTree:
+
+### binarySearchTree:
+
+### List:
+
+### sorting:
+
+### String:
+
+### Arrays: 
+
+### Set&Maps
+

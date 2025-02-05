@@ -1,7 +1,7 @@
 package graphs;
 import java.util.ArrayList;
 
-public class TarzanAlgo {
+public class GetBridgeProblem {
     static class Edge {
         int src;
         int dest;
