@@ -3,6 +3,9 @@ import java.util.*;
 
 public class HashMap1 {
     public static void main(String[] args){
+
+        //notes:
+
         //in HashMap the keys are always unique.
         //values can be same or different for multiple keys.
         //hashMap is unOrdered
@@ -11,6 +14,8 @@ public class HashMap1 {
         //let's take an example of fuel type as a key and price as a value
         //so there will be all fuel types will be unique since it is hashmap
         //(diesel)->89, (petrol)->89, (cng)->59.
+
+        //creation of hashMap
 
         //country, population
         HashMap<String, Integer> hashMap = new HashMap<>();
@@ -73,5 +78,10 @@ public class HashMap1 {
             System.out.print(key+" "+ hashMap.get(key));
             System.out.println();
         }
+
+        //removing pair in hashMap
+
+        hashMap.remove("Chine");
+        System.out.println(hashMap);
     }
 }
