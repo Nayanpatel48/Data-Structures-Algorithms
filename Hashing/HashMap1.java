@@ -59,9 +59,18 @@ public class HashMap1 {
         }
         System.out.println();
 
+        //prefer this approach for iteration in hashMap
         for (Map.Entry<String, Integer> e: hashMap.entrySet()){
             //e structure here is (key, value)
             System.out.print(e.getKey()+" "+e.getValue());
+            System.out.println();
+        }
+
+        //alternative approach, less preferable than approach before
+        Set<String> keys = hashMap.keySet();
+
+        for (String key : keys){
+            System.out.print(key+" "+ hashMap.get(key));
             System.out.println();
         }
     }
