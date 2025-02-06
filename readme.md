@@ -43,5 +43,8 @@
 
 ### Arrays: 
 
-### Set&Maps
+### HashShing(google has soft spot for it):
 
+1. [HashSet(notes are in the form of code+dsa notes)](#HashSet)
+2. [HashMap(notes are in code + dsa notes)](#HashMap)
+3. [](#)

@@ -1,4 +1,4 @@
-package setAndMaps;
+package Hashing;
 
 public class PerformanceTestingMethodTime
 {
