@@ -68,7 +68,9 @@
 ### Trie:
 1. [TrieSmallExample](#)
 2. [Insertion In Trie](#)
-3. [search In Trie(pending)](#)
+3. [search In Trie](#)
+4. [Q. Word break problem(pending)](#)
+5. [](#)
 
 ### List:
 1. [ArrayList](#)
@@ -99,12 +101,12 @@
 2. [HashMap(notes are in code + dsa notes)](#HashMap)
 3. [NormalSet](#NormalSet)
 4. [HashMap implementation](#HashMap implementation)
-5. [Q. Majority Elements](#Majority Elements)
-6. [Q. Union of two arrays](#Union of two arrays)
-7. [Q. Intersection Of TwoArr](#Intersection Of TwoArr)
-8. [Q. Find Itinerary(path) from Tickets](#)
-9. [Q. SubArray Sum equal to k](#)
-10. [Sorted set](#)
+5. [Q.Majority Elements](#Majority Elements)
+6. [Q.Union of two arrays](#Union of two arrays)
+7. [Q.Intersection Of TwoArr](#Intersection Of TwoArr)
+8. [Q.Find Itinerary(path) from Tickets](#)
+9. [Q.SubArray Sum equal to k](#)
+10. [Q.](#)
 
 ### Dynamic Programming:
 1. [](#)

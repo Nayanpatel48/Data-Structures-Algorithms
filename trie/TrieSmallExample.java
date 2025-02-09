@@ -21,30 +21,55 @@ public class TrieSmallExample {
 
     //insert In trie - O(L) L=length of word
     public static void insert(String word){
+        Node curr = root;
+
         for (int i=0;i<word.length();i++){ // O(L) = L is length of word
             int idx = word.charAt(i) - 'a';
 
             //checking existence of node
-            if (root.children[idx] == null){
+            if (curr.children[idx] == null){
                 //create new node and insert into idx position
-                root.children[idx] = new Node();
+                curr.children[idx] = new Node();
             }
             //eow = end of word
             if (i == (word.length()-1)){
-                root.children[idx].eow=true;
+                curr.children[idx].eow=true;
             }
 
-            root=root.children[idx];
+            curr=curr.children[idx];
         }
     }
 
+    //search word in trie - O(L) L = word length
+    public static boolean searchWord(String word){
+        Node curr = root;
+        for (int i=0;i<word.length();i++){
+            int idx = word.charAt(i) - 'a';
+            Node node = curr.children[idx];
+
+            if (node == null){ // character does not exist
+                return false;
+            }
+
+            if (!node.eow && i == (word.length()-1)){ // if the last character is not end of word
+                return false;
+            }
+
+            curr = curr.children[idx];
+        }
+
+        return true;
+    }
     public static void main(String[] args){
         String[] arr  = {"the", "a", "there", "their", "any"};
 
         //adding each word from arr
-        for (int i=0;i<arr.length;i++){
-            insert(arr[i]);
+        for (String s : arr) {
+            insert(s);
         }
+
+        System.out.println((searchWord("the")) ? "Word exists" : "Word not exists");
+        System.out.println((searchWord("thee")) ? "Word exists" : "Word not exists");
 
 
     }

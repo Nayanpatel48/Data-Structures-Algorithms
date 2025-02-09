@@ -104,7 +104,7 @@
 7. [Q. Intersection Of TwoArr](#Intersection Of TwoArr)
 8. [Q. Find Itinerary(path) from Tickets](#)
 9. [Q. SubArray Sum equal to k](#)
-10. [Q. ](#)
+10. [Sorted set](#)
 
 ### Dynamic Programming:
 1. [](#)
