@@ -1,8 +1,7 @@
 /**Always do investigative study*/
 package Arrays;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class ArrayClass
 {

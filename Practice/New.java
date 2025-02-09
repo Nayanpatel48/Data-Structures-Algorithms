@@ -2,46 +2,36 @@ package Practice;
 import java.util.*;
 
 public class New {
+    public static int[] queryResults(int limit, int[][] queries) {
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        Set<Integer> distinctValues = new HashSet<>(); // Single HashSet
+        int[] ans = new int[queries.length];
+
+        for (int i=0;i<=limit;i++){
+            hashMap.put(i,-1);
+        }
+
+        for (int i=0;i<queries.length;i++){
+            hashMap.put(queries[i][0], queries[i][1]);
+
+            for (int value : hashMap.values()){
+                if (value != -1){
+                    distinctValues.add(value);
+                }
+            }
+
+            System.out.println(distinctValues);
+
+            ans[i] = distinctValues.size();
+            distinctValues.clear();
+        }
+        return ans;
+    }
     public static void main(String[] args) {
-        Set<Character> set1 = new HashSet<>();
-        Set<Character> set2 = new HashSet<>();
-
-        String s1 = "tozo";
-        String s2 = "ootz";
-
-        int len = s1.length();
-        int noOfDiff = 0;
-
-        //checking for differing characters
-        for (int i=0;i<len;i++){
-            if (noOfDiff>=2){
-                System.out.println("false");
-                return;
-            }
-            if (s1.charAt(i) != s2.charAt(i)){
-                noOfDiff++;
-            }
-            System.out.println(noOfDiff);
-        }
-
-        //creating sets
-        for (int i = 0; i < len; i++) {
-            set1.add(s1.charAt(i));
-            set2.add(s2.charAt(i));
-        }
-
-        if (set1.size() != set2.size()){
-            System.out.println("false");
-        }
-        //since sets are created checking that both are equal or not
-
-        //Iterator for set
-        Iterator<Character> iterator = set1.iterator();
-        while (iterator.hasNext()) {
-            if (!set2.contains(iterator.next())) {
-                System.out.println("false");
-            }
-        }
-        System.out.println("true");
+        int[][] arr = {
+                {0,1},{1,2},{2,2},{3,4},{4,5}
+//                {1,4},{2,5},{1,3},{3,4}
+        };
+        System.out.println(Arrays.toString(queryResults(4, arr)));
     }
 }

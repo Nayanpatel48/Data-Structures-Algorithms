@@ -26,6 +26,6 @@ class Palindrome {
         return true;
     }
     public static void main(String[] args){
-        System.out.println(isPalindrome("Nayan..||"));
+        System.out.println(isPalindrome("Nayan"));
     }
 }

@@ -9,7 +9,7 @@ public class TestListArrayListAndLinkedList
 {
     public static void main(String[] args)
     {
-        //to create list there are two concrete classes: ArrayList and LinkedList
+        //to create list there are two concrete classes: ArrayList and LinkedList.LinkedList
         //duplicates allowed
         //traversal possible in unidirectional as well as bidirectional
         //list created using arrayList

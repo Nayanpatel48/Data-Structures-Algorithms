@@ -1,8 +1,10 @@
 package List;
 
-public class ArrayList {
+import java.util.*;
+
+public class ArrayList1 {
     public static void main(String[] args){
-        java.util.ArrayList<Integer> list1 = new java.util.ArrayList<>();
+        ArrayList<Integer> list1 = new ArrayList<>();
 
         //adding new element to list1
         list1.add(6);

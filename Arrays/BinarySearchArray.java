@@ -17,6 +17,7 @@ public class BinarySearchArray
         for (int i=0;i<sizeOfArray;i++)
             array1[i] = sc.nextInt();
 
+        java.util.Arrays.sort(array1);
         System.out.println("Enter value to be searched:");
         int keyValue = sc.nextInt();
 
@@ -25,38 +26,8 @@ public class BinarySearchArray
         else
             System.out.println("Value does not exists.");
     }
-    public static void selectionSort(int[] array)
-    {
-        for (int i=0;i<array.length-1;i++)
-        {
-            int currentMin = array[i];
-            int currentMinIndex = i;
-
-            for (int j=i+1;j<array.length;j++)
-            {
-                if (currentMin>array[j])
-                {
-                    currentMin=array[j];
-                    currentMinIndex=j;
-                }
-            }
-
-            //if necessary then perform swap operation
-            if (currentMinIndex != i)
-            {
-                int temp = array[currentMinIndex];
-                array[currentMinIndex] = array[i];
-                array[i]=temp;
-            }
-        }
-        //there is no need to return anything in case of array cause changes
-        //are directly made into array
-    }
     public static boolean binarySearch(int key, int[] array)
     {
-        //first we will sort array
-        selectionSort(array);
-
         int low=0;
         int high=array.length-1;
 
