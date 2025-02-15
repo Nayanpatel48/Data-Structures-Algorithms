@@ -11,6 +11,7 @@ public class ArrayClass
         int sizeOfArray = sc.nextInt();
 
         int[] array1 = new int[sizeOfArray];
+        array1.toString();
 
         System.out.println("Enter array elements:");
         for (int i=0;i<sizeOfArray;i++)

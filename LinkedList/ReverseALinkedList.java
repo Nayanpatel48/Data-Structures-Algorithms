@@ -228,9 +228,16 @@ public class ReverseALinkedList {
     }
 
     public boolean detectCycle(Node head){
+        //if linked list is empty
         if (head == null){
             return false;
         }
+
+        //single node, no cycle
+        if (head.next == null){
+            return true;
+        }
+
         Node turtle = head;
         Node hare = head;
 

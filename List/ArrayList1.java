@@ -11,6 +11,7 @@ public class ArrayList1 {
         list1.add(7);
         list1.add(8);
         list1.add(9);
+        System.out.println(list1);
         for (Integer integer : list1) {
             System.out.print(integer + " ");
         }

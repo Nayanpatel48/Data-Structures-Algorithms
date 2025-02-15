@@ -83,9 +83,10 @@
 5. [Selection Sort](#)
 
 ### String:
-1. [StringToCharArr](#)
+1. [StringToCharArr vice versa](#)
 2. [String Palindrome Check](#)
 3. [CharacterArrToString](#)
+3. [StringBuilder](#)
 
 ### Arrays: 
 1. [Array and operations on array](#)
