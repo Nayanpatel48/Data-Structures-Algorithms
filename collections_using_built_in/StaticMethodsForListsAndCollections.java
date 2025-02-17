@@ -27,6 +27,26 @@ public class StaticMethodsForListsAndCollections
         list1.add(90);
         list1.add(90);
         list1.add(90);
+        list1.set(0,2);
+        list1.addFirst(90);
+        list1.addLast(90);
+//        list1.contains(90);
+//        list1.get(0);
+//        list1.getFirst();
+//        list1.getLast();
+//        list1.isEmpty();
+//        list1.lastIndexOf(9);
+//        list1.remove(90);
+//        list1.removeFirst();
+//        list1.removeLast();
+//        list1.reversed();
+//        list1.toArray();
+//        list1.toString();
+
+        for (int e : list1){
+            System.out.print(e+" ");
+        }
+
         System.out.println("89 is at index: "+Collections.binarySearch(list1,89));
         System.out.println("Red color is at index: "+Collections.binarySearch(colorsList,"Red"));
         System.out.println("Purple color is at index: "+Collections.binarySearch(colorsList, "Purple"));//-1

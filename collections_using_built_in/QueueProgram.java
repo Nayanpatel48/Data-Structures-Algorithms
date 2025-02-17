@@ -13,6 +13,11 @@ public class QueueProgram
         queue1.offer(5);
         queue1.offer(9);
         queue1.offer(89);
+        queue1.isEmpty();
+        queue1.contains("");
+        queue1.size();
+        queue1.toArray();
+        queue1.toString();
         System.out.println("Content inside queue: "+queue1);
 
         //below:retrieving and removing element from the head of queue

@@ -2,6 +2,7 @@ package collections_using_built_in;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class IteratorForCollections
@@ -20,13 +21,18 @@ public class IteratorForCollections
         collection.add("Georgia");
         collection.add("Delhi");
         collection.add("Gujarat");
+        collection.isEmpty();
+        collection.contains("bayab");
+        collection.remove(4);
+        collection.size();
+        collection.toArray();
+        collection.toString();
+
 
         //The Collection interface extends the Iterable interface
         //the Iterable interface defines the iterator() method
-        Iterator<String> iterator = collection.iterator();
 
         //.hasNext() is used to check whether there are more elements in the iterator
-        while (iterator.hasNext())
-            System.out.print(iterator.next()+" ,");
+        for (String s : collection) System.out.print(s + " ,");
     }
 }

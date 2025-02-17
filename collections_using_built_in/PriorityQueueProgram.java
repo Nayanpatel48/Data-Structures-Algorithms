@@ -15,6 +15,14 @@ public class PriorityQueueProgram
         p1.offer("Ronic");
         p1.offer("'Anikesh");
         p1.offer("'Harshil");
+        p1.isEmpty();
+        p1.remove("");
+        p1.contains("");
+        p1.peek();//retrieves but does not delete
+        p1.poll();//retrieve and remove head of this queue
+        p1.size();
+        p1.toArray();
+        p1.toString();
         System.out.println("Content of priority queue: "+p1);
 
         //here elements will be removed in increasing order
